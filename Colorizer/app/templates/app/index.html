@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://demos.webicode.com/html/zap/ -->
+{% load static %}
+
+<html lang="en" class="csstransforms no-csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turning Black and White to Colour </title>
+<meta name="keywords" content="HTML5,CSS3,HTML,Template,Multi-Purpose,M_Adnan,Corporate Theme,ZAP Multi Purpose Care,eCommerce,ZAP - Multi Purpose eCommerce HTML5 Template">
+<meta name="description" content="ZAP | The Multi-Purpose HTML5 Template">
+<meta name="author" content="M_Adnan">
+
+<!-- FONTS ONLINE -->
+<link href="static/ZAP_files/css" rel="stylesheet" type="text/css">
+
+<!--MAIN STYLE-->
+<link href="static/ZAP_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="static/ZAP_files/style.css" rel="stylesheet" type="text/css">
+<link href="static/ZAP_files/main.css" rel="stylesheet" type="text/css">
+<link href="static/ZAP_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+.intro-bg {
+	background: url(static/ZAP_files/intro-bg.jpg) center center fixed no-repeat;
+	background-size: cover;
+}
+.intro-style .intro-in {
+	position: relative;
+	overflow: hidden;
+}
+.intro-style .intro-in .intro-hover {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: rgba(0,0,0,0.8);
+	opacity: 0;
+	padding-top: 30%;
+	color: #fff;
+	font-size: 16px;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+.intro-style li {
+	margin-bottom: 30px;
+	text-align: center;
+}
+.intro-style .intro-in {
+	box-shadow: 0px 0 10px rgba(0,0,0,0.1)
+}
+.intro-style .intro-in:hover .intro-hover {
+	opacity: 1;
+}
+.intro-style .intro-in h5 {
+	background: #fff;
+	margin: 0px;
+	font-size: 12px;
+	position: relative;
+	z-index: 999;
+	padding: 15px 20px;
+}
+.overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.position-center-center {
+	width: 100%;
+	text-align: center;
+}
+.new-tags {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #000;
+	height: 50px;
+	width: 50px;
+}
+</style>
+</head>
+<body datasqstyle="{&quot;paddingTop&quot;:null}" datasquuid="a1a5331e-964a-4623-a4a2-336411875353" style="padding-top: 0px;">
+<!-- Page Wrap -->
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'fav.ico' %}">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+			<a class="navbar-brand img" style="padding:1px;" href=""><img src="{% static 'kmitlogo.jpg' %}" width="50px" height="50px"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Colourizer</a></li>
+    </ul>
+  </div>
+</nav>
+
+</div>
+<div id="wrap">
+  <div class="intro-style">
+    <div class="intro-bg" style="height:650px; position:relative;">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="position-center-center">
+          <!--<div class="animate bounceIn" data-wow-delay="0.9s" style="visibility: visible; animation-delay: 0.9s; animation-name: bounceIn;"> <img src="static/ZAP_files/logo.png" alt="">-->
+            <h3 class="font-montserrat" style="color:#ffffff">TURNING BLACK AND WHITE PHOTOS TO COLOUR</h4><br>
+            <ul class="font-montserrat" style="color:rgba(255,255,255,0.8); line-height:30px;">
+              <!--<li class="text-uppercase"> &nbsp; | &nbsp; COPORATE &nbsp; | &nbsp; PORTFOLIO &nbsp; | &nbsp; BUSINESS  &nbsp; | &nbsp; PERSONAL  &nbsp; | &nbsp; RESUME &nbsp; | &nbsp; CREATIVE  &nbsp; | &nbsp; <br>
+                PHOTOGRAPHY &nbsp; | &nbsp; INDUSTRIAL  &nbsp; | &nbsp; ANIMATION  &nbsp; |<br>-->
+              </li>
+            </ul><br>
+            <form enctype="multipart/form-data" method="post" action="">{% csrf_token %}
+							<label class="btn btn-med btn-color btn-file">
+							    Upload Image<input type="file" id="uploadImage" name="image" accept="image/jpg" style="display: none;" />
+						  </label>
+							<input type="submit" value="Submit" class="btn btn-med btn-color" />
+						</form>
+					</div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="link">
+
+		{% if success %}
+	  <div class="row">
+        <div class="col-md-6">
+          <div class="heading-block text-center margin-bottom-40 margin-top-50 animate fadeInUp" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+            <h3>Black and White Image</h3>
+            <div class="divider divider-short divider-center"><img class="i-div" src="static/ZAP_files/hammers.png" alt="Divider Icon Image"></div>
+          </div>
+          <ul class="row">
+            <li class="col-md-12 animate fadeIn" data-wow-delay="0.6s" style="visibility: hidden; animation-delay: 0.6s; animation-name: none;">
+              <div class="intro-in"> <img class="img-responsive width-100 NO-CACHE" src="{% static "gray.jpg" %}" alt=""> <a href="{% static "gray.jpg" %}" class="intro-hover" target="_blank"> VIEW FULL SIZE </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="heading-block text-center margin-bottom-40 margin-top-50 animate fadeInUp" data-wow-delay="0.2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+            <h3>Coloured Image</h3>
+            <div class="divider divider-short divider-center"><img class="i-div" src="static/ZAP_files/hammers.png" alt="Divider Icon Image"></div>
+          </div>
+          <ul class="row">
+            <li class="col-md-12 animate fadeIn" data-wow-delay="0.8s" style="visibility: hidden; animation-delay: 0.8s; animation-name: none;">
+              <div class="intro-in"> <img class="img-responsive width-100 NO-CACHE" src="{% static "color.jpg" %}" alt=""> <a href="{% static "color.jpg" %}" class="intro-hover" target="_blank"> VIEW FULL SIZE </a></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+	 {% endif %}
+
+
+	  <div class="heading-block text-center margin-bottom-40 margin-top-50 animate fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+        <h3>PREVIOUS PREDICTIONS</h3>
+        <div class="divider divider-short divider-center"><img class="i-div" src="static/ZAP_files/hammers.png" alt="Divider Icon Image"></div>
+      </div>
+      <ul class="row">
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-1.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/index.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO 1</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-7.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_coporate_1.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO COPORATE</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-2.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_creative_2.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO CREATIVE 2</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-3.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_creative_3.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO CREATIVE 3</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-4.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_creative_4.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO CREATIVE 4</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-5.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_creative_5.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO CREATIVE 5</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-6.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_creative_6.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO CREATIVE 6</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-8.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_shop_1.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO SHOP 1</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-9.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_shop_2.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO SHOP 2</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-10.jpg" alt=""> <a href="http://demos.webicode.com/html/zap/animation-version/main_shop_3.html" class="intro-hover" target="_blank"> VIEW DEMO </a>
+            <h5>DEMO SHOP 3</h5>
+          </div>
+        </li>
+        <li class="col-md-3 animate fadeIn" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeIn;">
+          <div class="intro-in"> <img class="img-responsive" src="static/ZAP_files/intro-soon.jpg" alt="">
+            <h5>COMING SOON</h5>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+<!-- Wrap End -->
+<!-- JavaScripts -->
+<script src="static/ZAP_files/jquery.min.js.download"></script>
+<script src="static/ZAP_files/wow.min.js.download"></script>
+<script src="static/ZAP_files/bootstrap.min.js.download"></script>
+<script src="static/ZAP_files/own-menu.js.download"></script>
+<script src="static/ZAP_files/jquery.flexslider-min.js.download"></script>
+<script src="static/ZAP_files/jquery.countTo.js.download"></script>
+<script src="static/ZAP_files/jquery.isotope.min.js.download"></script>
+<script src="static/ZAP_files/jquery.bxslider.min.js.download"></script>
+<script src="static/ZAP_files/owl.carousel.min.js.download"></script>
+<script src="static/ZAP_files/jquery.sticky.js.download"></script>
+
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+<script type="text/javascript" src="static/ZAP_files/jquery.themepunch.tools.min.js.download"></script>
+<script type="text/javascript" src="static/ZAP_files/jquery.themepunch.revolution.min.js.download"></script>
+<script src="static/ZAP_files/zap.js.download"></script>
+
+<script>
+var nods = document.getElementsByClassName('NO-CACHE');
+for (var i = 0; i < nods.length; i++)
+{
+		nods[i].attributes['src'].value += "?a=" + Math.random();
+}
+
+
+</script>
+
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+<script type="text/javascript">
+/*-----------------------------------------------------------------------------------*/
+/*    NAVIGATION SMOOTH SCROLL
+/*-----------------------------------------------------------------------------------*/
+$('.link-to a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+        || location.hostname == this.hostname) {
+      var target = $(this.hash);
+      var href = $.attr(this, 'href');
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+         scrollTop: target.offset().top
+        }, 1000, function () {
+            window.location.hash = href;
+        });
+        return false;
+      }
+    }
+});
+</script>
+
+</body></html>
